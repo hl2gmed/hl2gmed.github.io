@@ -2,10 +2,10 @@
 
 
 # Lets get started
-First create the npc_ folder for your npc. The one I made for this tutorial is in "addons/Nextbot_tut/lua/entities" and is named "simple_nextbot.lua". Now open that file so you can start adding the code.
+First create the npc_ folder for your npc. The one I made for this tutorial is in "custom/Npc_tut/lua/npcs" and is named "npc_simple_ai" and has "init.lua" file inside. Now open that file so you can start adding the code.
 
 # The code
-### The basic stuff we need for entities
+### The basic stuff we need for npcs
 Start off with defining the type npc to use and making it spawnable. Pretty much the same as any other npc so far. Here we set the model and define some variables we will use later.
 ```lua
 NPC.Base 			= "CAI_BaseNPC"
