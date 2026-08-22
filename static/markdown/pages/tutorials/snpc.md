@@ -1,3 +1,4 @@
+# Introduction
 **Scripted NPCs** (or **SNPCs** for short) are custom npcs coded entirely in Lua. This tutorial will go over the steps for a simple AI that will search for enemies (you) and chase them until they die or are too far away. It will also do some random other stuff when there are not any enemies.
 
 
@@ -5,10 +6,10 @@
 First create the npc_ folder for your npc. The one I made for this tutorial is in "custom/Npc_tut/lua/npcs" and is named "npc_simple_ai" and has "init.lua" file inside. Now open that file so you can start adding the code.
 
 # The code
-### The basic stuff we need for npcs
+## The basic stuff we need for npcs
 Start off with defining the type npc to use and making it spawnable. Pretty much the same as any other npc so far. Here we set the model and define some variables we will use later.
 ```lua
-NPC.Base 			= "CAI_BaseNPC"
+NPC.Type 			= "CAI_BaseNPC"
 NPC.Spawnable		= true
 
 function NPC:Initialize()
@@ -18,7 +19,7 @@ function NPC:Initialize()
 	self.LoseTargetDist	= 2000	-- How far the enemy has to be before we lose them
 	self.SearchRadius 	= 1000	-- How far to search for enemies
 ```
-### Enemy related stuff
+## Enemy related stuff
 This adds some useful functions for enemy related stuff. An NPC isn't complete if it can't target stuff, right? These include a function to check if there is still an enemy or if it got away and a function to search for enemies. I've added all sorts of comments so you know exactly what they do.
 ```lua
    -- NPC:Get/SetEnemy()
@@ -37,22 +38,22 @@ This adds some useful functions for enemy related stuff. An NPC isn't complete i
    ----------------------------------------------------
    function self.HaveEnemy(self)
       -- If our current enemy is valid
-   	if ( self:GetEnemy() ) then
-   		-- If the enemy is too far
-	   	if ( self:GetPos():DistTo(self:GetEnemy():GetPos()) > self.LoseTargetDist ) then
-	   		-- If the enemy is lost then call FindEnemy() to look for a new one
-	   		-- FindEnemy() will return true if an enemy is found, making this function return true
-	   		return self:FindEnemy()
-   		-- If the enemy is dead( we have to check if its a player before we use Alive() )
-   		elseif ( self:GetEnemy():IsPlayer() and !self:GetEnemy():IsAlive() ) then
-   			return self:FindEnemy()		-- Return false if the search finds nothing
-   		end	
-   		-- The enemy is neither too far nor too dead so we can return true
-   		return true
-   	else
-   		-- The enemy isn't valid so lets look for a new one
-   		return self:FindEnemy()
-   	end
+      if ( self:GetEnemy() ) then
+         -- If the enemy is too far
+         if ( self:GetPos():DistTo(self:GetEnemy():GetPos()) > self.LoseTargetDist ) then
+            -- If the enemy is lost then call FindEnemy() to look for a new one
+            -- FindEnemy() will return true if an enemy is found, making this function return true
+            return self:FindEnemy()
+         -- If the enemy is dead( we have to check if its a player before we use Alive() )
+         elseif ( self:GetEnemy():IsPlayer() and !self:GetEnemy():IsAlive() ) then
+            return self:FindEnemy()		-- Return false if the search finds nothing
+         end	
+         -- The enemy is neither too far nor too dead so we can return true
+         return true
+      else
+         -- The enemy isn't valid so lets look for a new one
+         return self:FindEnemy()
+      end
    end
 
    ----------------------------------------------------
@@ -77,7 +78,7 @@ This adds some useful functions for enemy related stuff. An NPC isn't complete i
 
 end
 ```
-### The "brain" of our bot
+## The "brain" of our bot
 As scary as this code may look to some, it is actually pretty simple:
 
 Check if we have an enemy, if not it will look for one using the above HaveEnemy() function.
@@ -125,12 +126,11 @@ You now have a basic npc running around the map and that's pretty much it. Here 
 
 # The full code
 ```lua
-NPC.Type          = "CAI_BaseNPC"
-NPC.Spawnable     = true
+NPC.Type 			= "CAI_BaseNPC"
+NPC.Spawnable		= true
 
 function NPC:Initialize()
 
-   self:UseClientSideAnimation()
    self:SetModel( "models/antlion.mdl" )
 	
    self.LoseTargetDist	= 2000	-- How far the enemy has to be before we lose them
@@ -152,22 +152,22 @@ function NPC:Initialize()
    ----------------------------------------------------
    function self.HaveEnemy(self)
       -- If our current enemy is valid
-   	if ( self:GetEnemy() ) then
-   		-- If the enemy is too far
-	   	if ( self:GetPos():DistTo(self:GetEnemy():GetPos()) > self.LoseTargetDist ) then
-	   		-- If the enemy is lost then call FindEnemy() to look for a new one
-	   		-- FindEnemy() will return true if an enemy is found, making this function return true
-	   		return self:FindEnemy()
-   		-- If the enemy is dead( we have to check if its a player before we use Alive() )
-   		elseif ( self:GetEnemy():IsPlayer() and !self:GetEnemy():IsAlive() ) then
-   			return self:FindEnemy()		-- Return false if the search finds nothing
-   		end	
-   		-- The enemy is neither too far nor too dead so we can return true
-   		return true
-   	else
-   		-- The enemy isn't valid so lets look for a new one
-   		return self:FindEnemy()
-   	end
+      if ( self:GetEnemy() ) then
+         -- If the enemy is too far
+         if ( self:GetPos():DistTo(self:GetEnemy():GetPos()) > self.LoseTargetDist ) then
+            -- If the enemy is lost then call FindEnemy() to look for a new one
+            -- FindEnemy() will return true if an enemy is found, making this function return true
+            return self:FindEnemy()
+         -- If the enemy is dead( we have to check if its a player before we use Alive() )
+         elseif ( self:GetEnemy():IsPlayer() and !self:GetEnemy():IsAlive() ) then
+            return self:FindEnemy()		-- Return false if the search finds nothing
+         end	
+         -- The enemy is neither too far nor too dead so we can return true
+         return true
+      else
+         -- The enemy isn't valid so lets look for a new one
+         return self:FindEnemy()
+      end
    end
 
    ----------------------------------------------------
