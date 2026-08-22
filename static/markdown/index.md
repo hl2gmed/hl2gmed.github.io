@@ -12,7 +12,7 @@ The wiki is a public resource and maintained by [Dim1xs](https://github.com/Dim1
  * [Example Link](/static/pages/wip.html)
 
 ## [Lua Documentation](/static/api.html)
- * [Getting Started](/static/pages/wip.html)
+ * [Getting Started](/static/starters.html)
  * [Lua Tutorials](/static/tutorials.html)
  * [Lua API Documentation](/static/documentation.html)
 
