@@ -1,6 +1,6 @@
 # Introduction
 ## What are Entities?
-Nearly everything you can see and touch in Garry's Mod is an Entity. Any object with a position in the game world is an Entity. The Player is an Entity, props are Entities, even the the Game World itself is an Entity—albiet a special and unique one.
+Nearly everything you can see and touch in HL2GMed is an Entity. Any object with a position in the game world is an Entity. The Player is an Entity, props are Entities, even the the Game World itself is an Entity—albiet a special and unique one.
 
 # Setup
 ## File Location
