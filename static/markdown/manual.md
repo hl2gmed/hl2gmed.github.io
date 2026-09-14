@@ -1,0 +1,3 @@
+#  HL2GMed Manual<hr>
+
+<div class="note"><b>💡NOTE:</b><br><i>Page you are trying to access is not yet available because of undergoing maintenance. Please come back later!</i></div>

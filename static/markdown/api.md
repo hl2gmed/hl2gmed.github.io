@@ -1,4 +1,5 @@
-# Lua Documentation
+#  Lua Documentation<hr>
+
 API of **Lua** Scripting language presented in *HL2GMed*.
 
 ## Globals
