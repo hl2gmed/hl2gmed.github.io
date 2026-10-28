@@ -1,6 +1,6 @@
 # Welcome!<hr>
 
-Welcome to the Half-Life 2: Garry's Mod Edition Wiki!
+Welcome to the HL2 GMod Edition Wiki!
 
 Here you will find tutorials, resources and documentation about HL2GMed and its [Lua API](#learning).
 
@@ -12,8 +12,8 @@ The wiki is a public resource and maintained by [Dim1xs](https://github.com/Dim1
  * [Example Link](/static/pages/wip.html)
 
 ## [Lua Documentation](/static/api.html)
- * [Lua — Getting Started](/static/starters.html)
- * [Lua — Tutorials](/static/tutorials.html)
+ * [Getting Started](/static/starters.html)
+ * [Tutorials](/static/tutorials.html)
  * [Lua API Documentation](/static/documentation.html)
 
 ## [Other Pages](/static/pages/other.html)
