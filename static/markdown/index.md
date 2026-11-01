@@ -12,14 +12,14 @@ The wiki is a public resource and maintained by [Dim1xs](https://github.com/Dim1
  * [Page WIP](/static/pages/wip.html)
 
 ## [Lua Documentation](/static/api.html)
- * [Getting Started](/static/starters.html)
- * [Tutorials](/static/tutorials.html)
- * [Lua API Documentation](/static/documentation.html)
+ * [Getting Started](/static/pages/starters.html)
+ * [Tutorials](/static/pages/tutorials.html)
+ * [Lua API Documentation](/static/pages/documentation.html)
 
-## [Other Pages](/static/pages/other.html)
+## [Other Pages](/static/pages/wip.html)
  * [Frequently Asked Questions](/static/pages/faq.html)
- * [About HL2GMed](/static/pages/hl2gmed/info.html)
- * [Media of HL2GMed](/static/pages/hl2gmed/media.html)
+ * [About HL2GMed](/static/pages/info.html)
+ * [Media of HL2GMed](/static/pages/media.html)
 
 # Official Links<hr>
 * [Discord Server](https://discord.com/invite/EscPqybqmG)
