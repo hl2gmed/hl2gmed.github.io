@@ -3,8 +3,8 @@
 <div class="note"><b>💡NOTE:</b><br><i>Tutorials are still WIP.</i></div>
 
 ##  Tier l
-* [Variables](/static/pages/tutorials/variables.html)
-* [If, Then, Else](/static/pages/tutorials/ite.html)
+* [Variables](/static/pages/tutorials/wip.html)
+* [If, Then, Else](/static/pages/wip.html)
 * [Functions](/static/pages/wip.html)
 * [Tables](/static/pages/wip.html)
 * [Comments](/static/pages/wip.html)
