@@ -1,30 +1,30 @@
-# Tutorials
+#  Tutorials<hr>
+
 <div class="note"><b>💡NOTE:</b><br><i>Tutorials are still WIP.</i></div>
 
-## Tier l
-* [Creating & Running](/static/pages/wip.html)
-* [Variables](/static/pages/wip.html)
-* [If, Then, Else](/static/pages/wip.html)
+##  Tier l
+* [Variables](/static/pages/tutorials/variables.html)
+* [If, Then, Else](/static/pages/tutorials/ite.html)
 * [Functions](/static/pages/wip.html)
 * [Tables](/static/pages/wip.html)
 * [Comments](/static/pages/wip.html)
 * [Realms](/static/pages/wip.html)
 * [Hooks](/static/pages/wip.html)
 
-## Tier 2
-* [Console Commands](/static/pages/tutorials/concommands.html)
-* [Console Variables](/static/pages/wip.html)
+##  Tier II
+* [Console Commands](/static/pages/tutorials/concommand.html)
+* [Console Variables](/static/pages/tutorials/convar.html)
 * [Using KeyValues](/static/pages/wip.html)
 * [JSON](/static/pages/wip.html)
 * [Filesystem](/static/pages/wip.html)
 
-## Tier 3
+##  Tier III
 ### Scripting Entites
 * [First Scripted Weapon](/static/pages/tutorials/swep.html)
 * [First Scripted Entity](/static/pages/tutorials/sent.html)
 * [First Scripted NPC](/static/pages/tutorials/snpc.html)
 ### Scripting Gamemodes
-* [Creating a Gamemode](/static/pages/wip.html)
+* [Scripting a Gamemode](/static/pages/wip.html)
 ### Scripting on VGUI
 * [VGUI Basics](/static/pages/wip.html)
 * [Painting on Screen](/static/pages/wip.html)
