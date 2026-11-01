@@ -6,7 +6,7 @@ Here you will find tutorials, resources and documentation about HL2GMed and its 
 
 The wiki is a public resource and maintained by [Dim1xs](https://github.com/Dim1xs). Want to make your own changes to the wiki? Create a pull request on Wiki GitHub Repository.
 
-## [HL2GMed Manual](/static/pages/wip.html)
+## [HL2GMed Manual](/static/pages/manual.html)
  * [Page WIP](/static/pages/wip.html)
  * [Page WIP](/static/pages/wip.html)
  * [Page WIP](/static/pages/wip.html)
@@ -16,7 +16,7 @@ The wiki is a public resource and maintained by [Dim1xs](https://github.com/Dim1
  * [Tutorials](/static/pages/tutorials.html)
  * [Lua API Documentation](/static/pages/wip.html)
 
-## [Other Pages](/static/pages/wip.html)
+## [Other Pages](/static/pages/hl2gmed.html)
  * [Frequently Asked Questions](/static/pages/faq.html)
  * [About HL2GMed](/static/pages/info.html)
  * [Media of HL2GMed](/static/pages/media.html)
