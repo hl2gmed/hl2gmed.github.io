@@ -1,25 +1,25 @@
 # Welcome!<hr>
 
-Welcome to the Half-Life 2: Garry's Mod Edition Wiki!
+Welcome to the HL2 GMod Edition Wiki!
 
 Here you will find tutorials, resources and documentation about HL2GMed and its [Lua API](#learning).
 
 The wiki is a public resource and maintained by [Dim1xs](https://github.com/Dim1xs). Want to make your own changes to the wiki? Create a pull request on Wiki GitHub Repository.
 
 ## [HL2GMed Manual](/static/pages/wip.html)
- * [Example Link](/static/pages/wip.html)
- * [Example Link](/static/pages/wip.html)
- * [Example Link](/static/pages/wip.html)
+ * [Page WIP](/static/pages/wip.html)
+ * [Page WIP](/static/pages/wip.html)
+ * [Page WIP](/static/pages/wip.html)
 
 ## [Lua Documentation](/static/api.html)
- * [Lua — Getting Started](/static/starters.html)
- * [Lua — Tutorials](/static/tutorials.html)
- * [Lua API Documentation](/static/documentation.html)
+ * [Getting Started](/static/pages/starters.html)
+ * [Tutorials](/static/pages/tutorials.html)
+ * [Lua API Documentation](/static/pages/wip.html)
 
-## [Other Pages](/static/pages/other.html)
+## [Other Pages](/static/pages/wip.html)
  * [Frequently Asked Questions](/static/pages/faq.html)
- * [About HL2GMed](/static/pages/hl2gmed/info.html)
- * [Media of HL2GMed](/static/pages/hl2gmed/media.html)
+ * [About HL2GMed](/static/pages/info.html)
+ * [Media of HL2GMed](/static/pages/media.html)
 
 # Official Links<hr>
 * [Discord Server](https://discord.com/invite/EscPqybqmG)
@@ -29,7 +29,7 @@ The wiki is a public resource and maintained by [Dim1xs](https://github.com/Dim1
 # Learning<hr>
 
 ## Pure Lua Resources
-* [Official Reference Manual (5.1)](http://www.lua.org/manual/5.1/manual.html) - This is the version Garry's Mod utilizes.
+* [Official Reference Manual (5.1)](http://www.lua.org/manual/5.1/manual.html) - This is the version HL2 GMod Edition utilizes.
 * [Programming in Lua Book](http://www.lua.org/pil/) 
 * [Lua-Users.org Lua Tutorial](http://lua-users.org/wiki/LuaTutorial) 
 * [Programming Gems - Book Sample](http://www.lua.org/gems/sample.pdf)

@@ -1,6 +1,6 @@
-# HL2GMed Media
+#  HL2GMed Media<hr>
 
-### HL2GMed Videos<br><hr>
+## HL2GMed Videos<br><hr>
 
 <ul>
 <i>Gameplay (Lua Implementation Showcase) - By Null7781</i>
@@ -23,7 +23,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z9CrlvSpoGo?si=Z4yT5KC16U960L1h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 </ul>
 
-### HL2GMed Images<br><hr>
+## HL2GMed Images<br><hr>
 
 **Sandbox Multiplayer**
 <ul>

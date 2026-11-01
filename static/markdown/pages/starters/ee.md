@@ -1,22 +1,33 @@
 #  What Are Lua Errors? 
 A Lua error is caused when the code that is being ran is improper. There are many reasons for why a Lua error might occur, but understanding what a Lua error is and how to read it is an important skill that any developer needs to have.
+
 #  Effects of Errors on Your Scripts 
 An error will halt your script's execution when it happens. That means that when an error is thrown, some elements of your script might break entirely. For example, if your gamemode has a syntax error which prevents init.lua from executing, your entire gamemode will break.
+
 #  Lua Error Format 
 The first line of the Lua error contains 3 important pieces of information:
 * The path to the file that is causing the error
 * The line that is causing the error
 * The error itself
+
 Here is an example of a code that will cause a Lua error:
-```
+
+
+```lua
 local text = "Hello World"
 Print( text )
 ```
+
+
 The code will produce the following error:
+
+
 ```
 [ERROR]addons/my_addon/lua/autorun/server/sv_my_addon_autorun.lua:2: attempt to call global 'Print' (a nil value)
  1. unknown - addons/my_addon/lua/autorun/server/sv_my_addon_autorun.lua:2
 ```
+
+
 That is because **Print** is not an existing function (**print**, however, does exist).
 
 The first line includes the path to the file that is causing the error - **addons/my_addon/lua/autorun/server/sv_my_addon_autorun.lua**
@@ -28,13 +39,11 @@ Lastly, the error itself - **attempt to call global 'Print' (a nil value)**
 Below the error, we have the trace of the function. Simplified - If the error is inside a function/chunk of code that is called from somewhere else, it will state where the code is called from.
 
 If the error happens serverside, the text color will be blue. If it happened clientside, it will be yellow. If it's menu code, it will be green (not a typical scenario). Messages which look like errors but are colored differently, such as red or white, are not Lua errors but rather engine errors.
-#  Printing Your Own 
-If you want to print your own error messages, there are three functions to do it:
-* <page>Global.error</page> will print your message, halt execution, and print the stack. Normal error behavior.
-* <page>Global.ErrorNoHalt</page> will print the file/line number and your message **without** halting the script. Useful for warning messages.
-* <page>Global.assert</page> will check to make sure that something is true. If it's not, it will print your message and halt just like <page>Global.error</page> does.
-#  Common Errors 
-##  Attempt to call global '?' a nil value 
+
+# Common Errors 
+
+## Attempt to call global '?' a nil value 
+
 **Description:** You tried to call a function that doesn't exist.
 
 **Possible causes:** 
@@ -47,7 +56,10 @@ If you want to print your own error messages, there are three functions to do it
 * Make sure the function exists
 * Make sure your function is defined in the correct realm
 * Check your function calls for spelling errors
+
+
 ## Attempt to perform arithmetic on global '?' (a nil value) 
+
 **Description:** You tried to perform arithmetic (+, -, *, /) on a global variable that is not defined.
 
 **Possible causes:** 
@@ -57,9 +69,15 @@ If you want to print your own error messages, there are three functions to do it
 **Ways to fix:**
 * Make sure you define local variables before calling them in the code
 * Check for spelling errors
+
+
 ## Attempt to perform arithmetic on '?' (a type value) 
+
 **Description:** You tried to perform arithmetic (+, -, *, /) on a variable that cannot perform arithmetic. (e.g. 2 + "some string")
+
+
 ## Attempt to index global 'varname' (a nil value) 
+
 **Description:** You tried to index an undefined variable (e.g. `print( variable.index )` where `variable` is undefined)
 
 **Possible causes:**
@@ -70,7 +88,10 @@ If you want to print your own error messages, there are three functions to do it
 **Ways to fix:**
 * Make sure the variable is only accessed in the realm it was defined in
 * If the variable is local, define it before accessing it
+
+
 ## Malformed number near 'number' 
+
 **Description:** There is a malformed number in the code (e.g. 1.2.3, 2f) 
 
 **Possible causes:**
@@ -82,7 +103,10 @@ If you want to print your own error messages, there are three functions to do it
 * Store IP addresses as a string
 * Multiply variables with numbers by using the ***** operator
 * Put a space between the concat (**..**) operator and the number.
+
+
 ## Unexpected symbol near 'symbol' 
+
 **Description:** You typed a symbol in the code that Lua didn't know how to interpret.
 
 **Possible causes:**
@@ -92,6 +116,8 @@ If you want to print your own error messages, there are three functions to do it
 **Ways to fix:**
 * Make sure there are no mistypes in the code
 * Close brackets and parentheses correctly (See: Code Indentation)
+
+
 ## 'symbol1' expected near 'symbol2' 
 **Description:** Lua expected symbol1 instead of symbol2.
 When 'symbol2' is <eof>, Lua expected a symbol before the end of the file
@@ -106,6 +132,7 @@ When 'symbol2' is <eof>, Lua expected a symbol before the end of the file
 * Close brackets and parentheses correctly (See: Code Indentation)
 * Use the correct operators
 * Add a comma after a table item
+
 ## Couldn't include file 'file' - File not found (<nowhere>)
 **Description:** The file system tried to include a file that either doesn't exist or was added while the server was live.
 

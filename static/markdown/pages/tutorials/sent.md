@@ -1,57 +1,74 @@
-# First Scripted Entity
-<div class="note"><b>💡NOTE:</b><br><i>This tutorial doesn't seem to show anything helpful, don't worry this will be changed!</i></div>
-
-## Introduction
-Nearly everything you can see and touch in Half-Life 2: Garry's Mod Edition is an Entity.  Any object with a position in the game world is an Entity.  The Player is an Entity, props are Entities, even the the Game World itself is an Entity—albiet a special and unique one.
-
-Entities are able to have custom, developer-defined behaviors that can control things like the way they look and the way they can be interacted with.  Entities are often foundational parts of Gamemodes and Addons
-## Setup
-### File Location
-The file(s) that make up an Entity should be placed in an Addon
-#### Addon Entity Location
-```
-addons/
-	├── my-addon-name/
-    │	├── lua/
-    │	│   ├── entities/
-	│	│   │   └── ...
-```
-### File Structure
-```
-entities/
-   ├── my-entity-name/
-   │   ├── cl_init.lua
-   │   ├── init.lua
-   │   └── shared.lua
-```
-## Creating an Entity
-#### shared.lua example:
 ```lua
--- Defines the Entity's type and name for shared access (both server and client)
-ENT.Type = "CPhysicsProp" -- Sets the Entity type to 'CPhysicsProp', indicating it's an scripted Entity.
-ENT.Name = "Test Entity" -- The name that will appear in the spawn menu.
-ENT.Spawnable = true -- Specifies whether this Entity can be spawned by players in the spawn menu.
-```
-#### init.lua example:
-```lua
-include("shared.lua")
+ENT.Type = "anim"
+ENT.Base = "base_anim"
 
--- Server-side initialization function for the Entity
+
+-- The name that appears in the spawnmenu.
+ENT.PrintName   = "Explosive Barrel"
+ENT.Information = "Shoot to explode."
+ENT.Author      = "You!"
+
+ENT.Spawnable = true
+
+-- These are custom entity variables, feel free to change them!
+ENT.ExplosionDamage = 100
+ENT.ExplosionRadius = 250
+
+-- This custom variable prevents the entity from infinitely exploding.
+ENT.HasExploded = false
+
+-- This code runs whenever the entity is created.
 function ENT:Initialize()
-    self:SetModel( "models/custom_props/hl2gmed.mdl" ) -- Sets the model for the Entity.
-    self:SetMoveType( MOVETYPE_VPHYSICS ) -- Sets how the Entity moves, using physics.
-    self:SetSolid( SOLID_VPHYSICS ) -- Makes the Entity solid, allowing for collisions.
-end
-```
-#### cl_init.lua example:
-```lua
-include("shared.lua")
+	self:SetModel( "models/props_c17/oildrum001_explosive.mdl" )
 
--- Client-side draw function for the Entity
-function ENT:DrawModel( flags )
+	-- Only set up physics on the server since it tends to create weird issues if you do it on the client.
+	if SERVER then
+		self:PhysicsInit( SOLID_VPHYSICS )
+		self:SetMoveType( MOVETYPE_VPHYSICS )
+		self:SetSolid( SOLID_VPHYSICS )
+	end
+
+	local phys = self:GetPhysicsObject()
+
+	-- This will make the entity fall instead of being stuck in the air when spawned.
+	if ( IsValid( phys ) ) then
+		phys:Wake()
+	end
+
+	-- This is required to allow the entity to be gibbed.
+	if ( SERVER ) then
+		self:PrecacheGibs()
+	end
 end
 
--- Client-side think function for the Entity
-function ENT:ClientThink()
+-- Explode when damaged!
+function ENT:OnTakeDamage( damageInfo )
+	if self.HasExploded then
+		return -- Stop the code here if the entity already exploded.
+	end
+    
+	local newEffectData = EffectData() -- Creates a new EffectData to use in util.Effect.
+	newEffectData:SetOrigin( self:GetPos() )
+	newEffectData:SetMagnitude( 100 )
+	newEffectData:SetScale( 1 )
+
+	-- Make the explosion effect!
+	util.Effect( "Explosion", newEffectData )
+
+	-- Makes the entity split apart. (The vector adds force to the gibs upwards)
+	self:GibBreakServer( Vector( 0, 0, 10 ) )
+
+	-- Setting this to true prevents the entity from exploding again.
+	self.HasExploded = true
+    
+	self:Remove()
+end
+
+function ENT:OnRemove()
+	if ( SERVER ) then
+		-- Deal explosion damage.
+		-- (The last two variables are custom and can be changed at the top)
+		util.BlastDamage( self, self, self:GetPos(), self.ExplosionRadius, self.ExplosionDamage )
+	end
 end
 ```
