@@ -1,4 +1,5 @@
-# FAQ
+#  HL2GMed FAQ<hr>
+
 <table>
 <thead>
 <tr>
