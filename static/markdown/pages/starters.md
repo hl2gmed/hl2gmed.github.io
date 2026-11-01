@@ -1,9 +1,9 @@
 #  Getting Started<hr>
 
-* [Creating & Running](/static/pages/api/beginners/cr.html)
-* [Operators & Aliases](/static/pages/api/beginners/oa.html)
-* [Global Variables](/static/pages/api/beginners/gv.html)
-* [Editors](/static/pages/api/beginners/editors.html)
-* [Error Explaination](/static/pages/api/beginners/ee.html)
-* [Folder Structure](/static/pages/api/beginners/wip.html)
-* [Loading Order](/static/pages/api/beginners/lo.html)
+* [Creating & Running](/static/pages/starters/cr.html)
+* [Operators & Aliases](/static/pages/starters/oa.html)
+* [Global Variables](/static/pages/starters/gv.html)
+* [Editors](/static/pages/starters/editors.html)
+* [Error Explaination](/static/pages/starters/ee.html)
+* [Folder Structure](/static/pages/starters/wip.html)
+* [Loading Order](/static/pages/starters/lo.html)
